@@ -31,6 +31,8 @@ public class UsuarioService {
                 throw new ServiceException ("Usuario Já Existente");
             }*/
         }
+        //para casdastrar usuario com perfil ja existente passe o id do perfil, caso queira cadastrar usuario e ao mesmo tempo
+        //um novo perfil passe a descricao do perfil
         Perfil perfil = perfilRepository.findOne(usuario.getPerfil().getId());
         usuario.setPerfil(perfil);
         return usuarioRepository.save(usuario);
